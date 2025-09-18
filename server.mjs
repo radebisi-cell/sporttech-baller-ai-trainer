@@ -1,3 +1,6 @@
+// Sanity checks (won't print secrets, only presence)
+if (!process.env.STRIPE_SECRET_KEY)  console.warn("STRIPE_SECRET_KEY not set");
+if (!process.env.STRIPE_WEBHOOK_SECRET) console.warn("STRIPE_WEBHOOK_SECRET not set");
 import express from "express";
 const app = express();
 const port = process.env.PORT || 8080;
